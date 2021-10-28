@@ -61,63 +61,86 @@ const App: React.FunctionComponent<Tournament> = (props) => {
   };
   return (
     <React.Fragment >
-      <div >
+      <div className="login-box">
       <h2 className="entry"> Tournament Data</h2>
+      <form>
       
-      Name:
+      <div className="user-box">
+     
       <input
         type="text"
         name="tournamentname"
         value={tournament.tournamentname}
         onChange={handletournamentInput}
       />
-      <br></br>
-      Location:
+       <label>Name:</label>
+      </div>
+      
+      <div className="user-box">
+    
       <input
         type="text"
         name="location"
         value={tournament.location}
         onChange={handletournamentInput}
       />
-      <br></br>
-      Category:
+       <label> Location:</label>
+      </div>
+
+      <div className="user-box">
+  
       <input
         type="text"
         name="category"
         value={tournament.category}
         onChange={handletournamentInput}
       />
-      <br></br>
-      Start Date:
+         <label> Category:</label>
+    </div>
+    <div className="user-box">
+   
       <input
         type="date"
         name="date"
         value={tournament.date?.toString()}
         onChange={handletournamentInput}
-        placeholder="start Date"
+       
       />
-      <br></br>
-      End Date:
+         <label> Start Date:</label>
+      </div>
+      <div className="user-box">
+     
       <input
         type="date"
         name="enddate"
         value={tournament.enddate?.toString()}
         onChange={handletournamentInput}
-        placeholder="start Date"
+       
       />
-      <br></br>
-      Website:
+       <label>End Date:</label>
+    </div>
+    <div className="user-box">
+   
       <input
         type="text"
         name="website"
         value={tournament.website}
         onChange={handletournamentInput}
       />
+        <label> Website:</label>
+      </div>
+      <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
       <button onClick={handleSubmit} >
         Submit
       </button>
+      </a>
+      </form>
       {/* <showSubmittedData /> */}
-      <div>
+      <div className="Container">
         <h2>Tournamanet Information  </h2>
         {tournament.formValid ? (
           <div>
@@ -137,8 +160,8 @@ const App: React.FunctionComponent<Tournament> = (props) => {
           <div></div>
         )}
       </div>
-    
-      </div>
+    </div>
+     
     </React.Fragment>
   );
 };
